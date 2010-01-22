@@ -1,0 +1,6 @@
+
+# admin media
+ln -s /usr/local/alwaysdata/python/django/1.1.1/django/contrib/admin/media/ media
+
+# dev ports
+La plage de ports de 11480 à 11489 vous a été attribuée.
