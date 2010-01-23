@@ -1,0 +1,78 @@
+
+
+Fri 22 Jan 2010 23:14:40 EST
+
+    OK now I am having coceptual problems with the subclass.
+    Each Chunk is referencing a Resource, which has a type, but we still
+    don't know how to split the execution based on type.
+
+    Basically... if you call Resource.render_to_html() it should be smart
+    enough to call the appropriate subclass method.
+    So for example if type="Link" the code should automatically dispatch
+    to LinkResource.render_to_html() ...
+
+    Now I want to do this CLEANLY... this is what NON CLEAN IS?
+    Well let me show you some code from a previous project where
+    the Example class has three subclasses MultpleChoice, SingleAnswer ...
+    which can be accessed through the appropriate ForeignKey
+
+            #######################################################################
+            # methods
+            def __unicode__(self):
+                return self.title   # return title as string version of obj
+
+            def getex(self):
+                """Returns the appropriate subclass instance depending on example_type """
+                type = self.example_type
+                if type=="mc":
+                    subclassinstance = self.multiplechoiceexample
+                elif type=="sa":
+                    subclassinstance = self.singleanswerexample
+                elif type=="tf":
+                    subclassinstance = self.truefalseexample
+                else:
+                    # what the hell... I shouldn't get to here ever !
+                    assert False,self.example_type
+                return subclassinstance # instance of SpecificExample 
+
+            #######################################################################
+            def getexorcreate(self):
+                """Returns the appropriate subclass instance depending on example_type
+                   if id doesn't exist it will create it with same pk as Example 
+                   returns ---> newinstance,created      created=True if it had to create   """
+                type = self.example_type
+                created = False
+                if type=="mc":
+                    try:
+                        subclassinstance = self.multiplechoiceexample
+                    except MultipleChoiceExample.DoesNotExist:
+                        subclassinstance = MultipleChoiceExample(id=self.id)    # create it
+                        created=True
+                #elif type=="sa":
+                #   omitted for brevity....
+                #elif type=="tf":
+                # 
+                else:
+                    assert False,self.example_type
+
+                return subclassinstance,created # instance of SpecificExample 
+            #######################################################################
+
+    so..... what do you think?
+    What is the point of Abstraction if we have to do a bunch of if, elif statements?
+
+    WAAAAAIT, isn't this what ContentTypes are for?
+    I think so.... i will look into this tmrw afternoon.
+    I think that will make it all cleaner.
+
+
+        UPDATE: YESS... finally I know how to do polymorphism ;)
+
+                    
+
+
+Fri Jan 22 18:14:56 EST 2010
+
+    starting to type in the classes...
+    now they are calling me to the BBQ so i must go
+

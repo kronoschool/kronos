@@ -4,3 +4,5 @@
 .DS_Store
 local_settings.py
 kronos_proj/media/uploads/
+kronos_proj/local_kronos.db
+kronos_proj/local_urls.py

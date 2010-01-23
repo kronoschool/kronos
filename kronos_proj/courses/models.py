@@ -11,7 +11,7 @@ from django.contrib import auth
 class Course(models.Model):
     """ This is the main folder-like structure that will be available on the site.
         A Course contains Lessonsi
-        A course is about a given Topic (not implemented yet) 
+        A course is about a given Topic (not implemented yet)
     """
 
     title       = models.CharField(max_length=300, help_text="Course title")
@@ -21,7 +21,7 @@ class Course(models.Model):
 
     #optional fields
     description  = models.TextField(max_length=500, help_text="describe the course in 3 sentences.")
-    # why not?   
+    # why not?
     image       = models.ImageField(  blank=True, upload_to="uploads/course_images/")
 
     created_date = models.DateField(auto_now_add=True)
@@ -82,5 +82,41 @@ class LessonAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Lesson,LessonAdmin)
+
+
+
+
+
+
+
+
+
+
+
+class Chunk(models.Model):
+    """ The Chunks are basic building blocks of Lessons
+        Each Chunk points to a Resource
+
+    """
+    lesson      = models.ForeignKey(Lesson)
+    order       = models.IntegerField()
+    #resource    = models.ForeignKey('resources.models.Resource')
+    #created_date = models.DateField(auto_now_add=True)
+    #edited_date  = models.DateField(auto_now=True)
+
+    def __unicode__(self):
+       return self.lesson.title+" order:"+str(order)  #+" --> resource:"+str(resource.id)
+
+
+
+
+
+class ChunkAdmin(admin.ModelAdmin):
+    """ This is the CourseAdmin class which sets up some niceties for
+        use in the django admin ;)  """
+    pass
+
+
+admin.site.register(Chunk,ChunkAdmin)
 
 
