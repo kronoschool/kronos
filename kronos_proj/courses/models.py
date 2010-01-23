@@ -47,23 +47,6 @@ class Lesson(models.Model):
 
     def __unicode__(self):
        return self.title   # return title as string version of obj
-<<<<<<< HEAD
-
-
-
-
-
-class LessonAdmin(admin.ModelAdmin):
-    """ This is the CourseAdmin class which sets up some niceties for
-        use in the django admin ;)  """
-    list_display = ('title', 'slug','course', 'description', 'created_date')
-    prepopulated_fields = {"slug": ("title",)}
-
-
-admin.site.register(Lesson,LessonAdmin)
-
-
-
 
 
 
@@ -88,16 +71,3 @@ class Chunk(models.Model):
 
 
 
-
-
-class ChunkAdmin(admin.ModelAdmin):
-    """ This is the CourseAdmin class which sets up some niceties for
-        use in the django admin ;)  """
-    pass
-
-
-admin.site.register(Chunk,ChunkAdmin)
-
-
-=======
->>>>>>> 9283e06498d8cc0d10cda12069aed8da92811514

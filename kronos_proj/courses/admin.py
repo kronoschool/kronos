@@ -17,3 +17,14 @@ class LessonAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
 
 admin.site.register(Lesson,LessonAdmin)
+
+
+
+
+class ChunkAdmin(admin.ModelAdmin):
+    """ This is the CourseAdmin class which sets up some niceties for
+        use in the django admin ;)  """
+        pass
+
+admin.site.register(Chunk,ChunkAdmin)
+
