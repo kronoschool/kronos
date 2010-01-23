@@ -1,5 +1,5 @@
 from django.contrib import admin
-from courses.models import Course, Lesson
+from courses.models import Course, Lesson, Chunk
 
 class CourseAdmin(admin.ModelAdmin):
     """ This is the CourseAdmin class which sets up some niceties for
@@ -24,7 +24,7 @@ admin.site.register(Lesson,LessonAdmin)
 class ChunkAdmin(admin.ModelAdmin):
     """ This is the CourseAdmin class which sets up some niceties for
         use in the django admin ;)  """
-        pass
+    pass
 
 admin.site.register(Chunk,ChunkAdmin)
 
