@@ -3,3 +3,4 @@
 *.swp
 .DS_Store
 local_settings.py
+kronos_proj/media/uploads/

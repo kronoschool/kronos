@@ -101,6 +101,7 @@ INSTALLED_APPS = (
 
     #external apps
     'tagging',
+    'courses',
 
 )
 
