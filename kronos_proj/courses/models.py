@@ -1,11 +1,6 @@
-
 from django.db import models
-from django.contrib import admin
 from django.contrib import auth
 
-
-
-# Create your models here.
 
 
 class Course(models.Model):
@@ -13,7 +8,6 @@ class Course(models.Model):
         A Course contains Lessonsi
         A course is about a given Topic (not implemented yet)
     """
-
     title       = models.CharField(max_length=300, help_text="Course title")
     slug        = models.SlugField(max_length=100, help_text="short-title-with-hyphens")
     teacher     = models.ForeignKey(auth.models.User)
@@ -32,20 +26,6 @@ class Course(models.Model):
 
 
 
-
-
-class CourseAdmin(admin.ModelAdmin):
-    """ This is the CourseAdmin class which sets up some niceties for
-        use in the django admin ;)  """
-    list_display = ('title', 'slug','teacher', 'description', 'created_date')
-    prepopulated_fields = {"slug": ("title",)}
-
-
-admin.site.register(Course,CourseAdmin)
-
-
-
-
 class Lesson(models.Model):
     """ This is the main unit of content that will be distributed according to a schedule
         A lesson is part of a Course
@@ -54,7 +34,6 @@ class Lesson(models.Model):
         A lesson is associated with a User (student role) via a Schedule
 
     """
-
     title       = models.CharField(max_length=300, help_text="Lesson title")
     slug        = models.SlugField(max_length=100, help_text="short-title-with-hyphens")
     course      = models.ForeignKey(Course)
@@ -63,12 +42,12 @@ class Lesson(models.Model):
     #optional fields
     description  = models.TextField(max_length=500, help_text="What is this lesson about (in 3 sentences).")
 
-
     created_date = models.DateField(auto_now_add=True)
     edited_date  = models.DateField(auto_now=True)
 
     def __unicode__(self):
        return self.title   # return title as string version of obj
+<<<<<<< HEAD
 
 
 
@@ -120,3 +99,5 @@ class ChunkAdmin(admin.ModelAdmin):
 admin.site.register(Chunk,ChunkAdmin)
 
 
+=======
+>>>>>>> 9283e06498d8cc0d10cda12069aed8da92811514
