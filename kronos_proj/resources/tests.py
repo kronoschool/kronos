@@ -7,17 +7,23 @@ Replace these with more appropriate tests for your application.
 
 from django.test import TestCase
 
+from resources.models import TextResource
+from django.contrib import auth
+
+
+
 class SimpleTest(TestCase):
-    def test_basic_addition(self):
+    def test_basic_TextResource(self):
         """
-        Tests that 1 + 1 always equals 2.
+        Creates a TextResource and checks if it has the right text
         """
-        self.failUnlessEqual(1 + 1, 2)
+        dummy = auth.models.User(username="john")
+        dummy.save()
 
-__test__ = {"doctest": """
-Another way to test that 1 + 1 is equal to 2.
+        s = "alskj aslkj "
+        t = TextResource(text=s, owner=dummy)
+        t.save()
 
->>> 1 + 1 == 2
-True
-"""}
+        self.failUnlessEqual(t.text, s)
+        self.failUnlessEqual(t.owner.id, dummy.id)
 
