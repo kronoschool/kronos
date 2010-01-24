@@ -104,6 +104,7 @@ INSTALLED_APPS = (
 
     #internal apps
     'courses',
+    'resources',
 
 )
 

@@ -4,6 +4,15 @@ Backend
 =======
     - Classes
     - Review classes together
+    - Schedule classes
+        - Schedule  (type of schedule and 
+        - Scheduled
+        
+
+Interface 
+=========
+    - What is the API for a Resource object
+      surely render_to_html is too restricive no?
 
 
 Front end

@@ -1,6 +1,11 @@
 from django.db import models
 from django.contrib import auth
 
+# i guess i don't need this -- the apps stay decoupled
+#from resources.models import TextResource, LinkResource
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes import generic
+
 
 
 class Course(models.Model):
@@ -62,12 +67,16 @@ class Chunk(models.Model):
     """
     lesson      = models.ForeignKey(Lesson)
     order       = models.IntegerField()
-    #resource    = models.ForeignKey('resources.models.Resource')
+
+    res_type    = models.ForeignKey(ContentType)
+    res_id      = models.PositiveIntegerField()
+    resource    = generic.GenericForeignKey('res_type', 'res_id')
+
     #created_date = models.DateField(auto_now_add=True)
     #edited_date  = models.DateField(auto_now=True)
 
     def __unicode__(self):
-       return self.lesson.title+" order:"+str(order)  #+" --> resource:"+str(resource.id)
+       return self.lesson.title+" order:"+str(self.order)  #+" --> resource:"+str(resource.id)
 
 
 
