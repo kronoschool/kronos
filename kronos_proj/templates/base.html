@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
+<head>
+
+    <title>{% block title %}Kronos{% endblock %}</title>
+    <meta name="keywords" content="{% block meta_keywords %}kronos, school{% endblock %}" /> 
+    <meta name="description" content="{% block meta_description %}kronoschool is for you, people.{% endblock %}" />
+
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/kronos.css" />
+    {% block add_style %}{% endblock %}
+	{# <link rel="shortcut icon" href="{{ MEDIA_URL }}img/favicon.ico" /> #}
+
+</head>
+<body id="body">
+
+    <div id="content">
+
+        <h1>Kronos</h1>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+
+    <div id="sidebar">
+
+        <h4>Navigation</h4>
+
+        <ul>
+            <li><a href="{% url home %}">Home</a></li>
+            <li><a href="{% url chunker %}">Chunker</a></li>
+        </ul>
+
+     </div>
+
+    {% block add_js %}{% endblock %}
+
+</body>
+</html>
