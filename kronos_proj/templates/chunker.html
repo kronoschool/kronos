@@ -9,9 +9,25 @@
 <div id="chunks">
 
     <div class="chunk">
-
+        
     </div>
 
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+
+<h4>Chunk Funcs</h4>
+
+<div class="sideblock">
+<ul>
+    <li><a href="#replace_for_progressive_enhancement" class="add">Add Text</a></li>
+    <li><a href="#replace_for_progressive_enhancement" class="add">Add Document</a></li>
+    <li><a href="#replace_for_progressive_enhancement" class="add">Add Audio</a></li>
+    <li><a href="#replace_for_progressive_enhancement" class="add">Add Video</a></li>
+    <li><a href="#replace_for_progressive_enhancement" class="add">Add Link</a></li>
+</ul>
 </div>
 
 {% endblock %}
@@ -22,6 +38,11 @@
 
     $(function () {
 
+        $('a.add').click(function () {
+
+            alert('that worked');
+
+        });
 
     });
 

@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     # (r'^kronos_proj/', include('kronos_proj.foo.urls')),
 
     url(r'^chunker/$', direct_to_template, {'template': 'chunker.html'}, name='chunker'),
+    url(r'^etherpad/$', direct_to_template, {'template': 'etherpad/index.html'}, name='etherpad'),
     url(r'^$', direct_to_template, {'template': 'base.html'}, name='home'),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs'

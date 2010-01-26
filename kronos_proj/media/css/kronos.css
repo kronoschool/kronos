@@ -4,7 +4,7 @@ body { font-family: monaco; margin: 0; text-align: center; font-size: 62.5%; bac
 .wrapper { overflow: auto; margin: 0; }
 
 #sidebar { float: right; width: 180px; margin: 0 0 0 20px; }
-#sidebar .sideblock { border: 1px solid #d3d3d3; padding: 2em; margin: 0; }
+#sidebar .sideblock { border: 1px solid #d3d3d3; padding: 2em; margin: 0 0 4em 0; }
 #sidebar h4 { font-size: 1.8em; }
 #sidebar ul { margin: 0; padding-left: 2em; }
 #sidebar ul li { font-size: 1.2em; margin-bottom: 0.4em; }

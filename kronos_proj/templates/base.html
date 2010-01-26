@@ -30,12 +30,17 @@
 
         <div id="sidebar">
 
+            {% block sidebar %}
+
+            {% endblock %}
+
             <h4>Navigation</h4>
 
             <div class="sideblock">
             <ul>
                 <li><a href="{% url home %}">Home</a></li>
                 <li><a href="{% url chunker %}">Chunker</a></li>
+                <li><a href="{% url etherpad %}">Etherpad</a></li>
             </ul>
             </div>
 
