@@ -6,13 +6,7 @@
 
 <h2>Chunker</h2>
 
-<div id="chunks">
-
-    <div id="nochunks">
-
-        <p>Add some chunks ...</p>
-
-    </div>
+<div id="chunks" >
 
 </div>
 
@@ -40,12 +34,29 @@
 
     $(function () {
 
-         var removes = function () {
+        var nochunks = function () {
+
+            $nochunks = $('<div id="nochunks" />');
+            $nochunks
+                .append('<p>Add some chunks ...</p>')
+                .hide()
+                .appendTo($('#chunks'))
+                .fadeIn('slow');
+
+        }
+
+        var removes = function () {
 
             $('a.chunkremove').click(function () {
 
-                $this = $(this);
-                $this.parents('.chunk').fadeOut();
+                $parent = $(this).parents('.chunk');
+                $parent
+                    .fadeOut('slow', function () {
+
+                        $(this).remove();
+                        if($('#chunks').children().length < 1) { nochunks(); }
+
+                    });
 
                 return false;
 
@@ -82,7 +93,12 @@
             
             if($('#nochunks').length > 0) {
 
-                $('#nochunks').fadeOut('slow', function () { $chunk.fadeIn(); });
+                $('#nochunks').fadeOut('slow', function () { 
+            
+                    $(this).remove();
+                    $chunk.fadeIn();
+
+                });
 
             } else { $chunk.fadeIn('slow'); }
             
@@ -91,6 +107,8 @@
             return false;
 
         });
+
+        nochunks();
 
     });
 
