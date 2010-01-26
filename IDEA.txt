@@ -1,0 +1,140 @@
+====== The future of schooling =====
+source: http://etherpad.com/MJfOF9W8xJ
+
+
+==== Motivation ====
+
+There is a wealth of educational resources on the web in the form
+of webpages, books, videos, podcasts and links. There is little or
+no coherence between the varied resources and nobody can guide your
+learning.
+
+    The problem:    Disorder and disconnect between educaitonal
+                    resources on the web.
+
+
+The solution we propose is to build subject guides for each topic.
+Something simple, flexible, extendable --- like a playlist in winamp,
+but which can handle ANY type of content.
+
+
+==== Features ====
+
+For the purpose of this discussion we should split the feature set
+into those that we want to implement at first (essential features)
+and those that we leave for later on.
+
+Minimum viable product:
+ - playlist of links to content
+ - note taking
+ - subject brakedown (subtopics)
+ - curriculum & relations between topics
+ - permalinks for topics:  ... /mathematics/calculus/derivatives/
+   this is a unique URL that people can link to for that subject
+
+
+Later on features:
+ -  live tutorials/question periods with a "teacher"
+    say scheduled for 9pm EST every Monday.
+ -  exercises/quizzes/self-assesment quesitons
+ -
+
+
+=== Classes ===
+
+class Course:
+    """ Basic container object for a given subject
+        maybe should be called "Subject?" or some other catchy name NODE or Knode (knowledge node?)
+
+        the view consists of a bunch of widgets:
+         - content list
+         - notes
+         - subtopics
+         - forum
+
+
+class UniversityCourse:
+    """ Special container object for a particular class at a given University
+        intended to be a social hub for the students.
+
+        contains:
+         - class schedule
+         - live note taking (based on schedule)
+         - file uploads (for class material)
+
+        Ideally we should be able to pull in all the data automatically from
+        the course catalog.
+
+
+class CourseToUniversityCourseMapping:
+    """ this provides an "equivalence" link between one of the courses
+        in our system and a given university's version of the course
+        for ex:   course:Classical Mechanics   --->  mcgill:PHYS 251  """
+
+        this mapping will allow us to bring people form universities
+        the "note taking" feature should perhaps be attached to a particular
+        university then...
+
+
+
+==== Business model ====
+
+What are we building?
+An open community project  or  a business   or  a platform.
+
+The community project is nice, but not self-sustainable. Do people really make money
+from those DONATE boxes? I don't know.
+A business on the other hand will maybe make it harder to attract seek users.
+What can we charge people for? Just we put up some links doesn't mean we can ask
+for money. Would companies want to pay to educate their employees?
+What if we just build a solid platform for e-learning and let others find ways to
+monetize it while giving us a cut. Why would they be able to get money?
+Maybe we can market this to univerisites as a replacement for WebCT/Blackboard ?
+
+In general the culture of "free beer" on the internet is so widely spread that
+it will be difficult to charge money. We must find a sneaky way to get the dough...
+
+
+==== Opportunities ====
+
+I preduct the universities as we know them will "go down" fairly
+soon and alternative school will show up with closed content that
+you have to pay for.
+If we operate our site for 2-3 years we will have amassed such a
+database of links to quality content that we would kick ass.
+The quesiton is how to get people to come to our side and share
+content.
+
+
+=== Comments ===
+
+allow users to create custom courses w/ the material we've collected
+use the 37 signals model for monetizing the site ( free accounts but paid upgrades )
+
+
+
+
+==== Execution ====
+
+reuse etherpad for note taking (DONE)
+    http://levski.cnd.mcgill.ca:8001/
+    (maybe not such a good idea)
+    git repository with concise instrucitons:
+    http://karteek.selfdabba.com/post/301488675/etherpad-opensourced
+    http://github.com/karteek/etherpad#readme
+    more links:
+    https://wiki.ubuntu.com/Etherpad
+    http://www.mclear.co.uk/2009/12/installing-etherpad-on-debian.html
+    http://lincolnloop.com/blog/2009/dec/18/running-your-own-self-hosted-etherpad-instance/
+    http://pauleira.com/13/installing-etherpad/
+    
+    http://code.google.com/p/etherpad/wiki/Instructions
+    
+get user accounts, messages, notifications from Pinax
+
+get inspired by moodle:
+    http://universityvirtualization.info/moodle
+    arlo:arlolra
+    
+
+

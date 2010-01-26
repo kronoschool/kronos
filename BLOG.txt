@@ -1,4 +1,14 @@
 
+Tue Jan 26 12:29:30 EST 2010
+Ivan:   
+    I know I wanted to abandon the etherpad idea, but actually
+    I think we can still use it --- if we embed just the text
+    editor as per:
+        http://hackschool.alwaysdata.net/media/etherpad/index.html
+
+    update: will copy the previous discussion/planning to IDEA.txt
+
+
 Sun 24 Jan 2010 14:10:55 EST
 Ivan:
     Ok so we have the generic ContentType thing working.
