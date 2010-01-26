@@ -8,8 +8,10 @@
 
 <div id="chunks">
 
-    <div class="chunk">
-        
+    <div id="nochunks">
+
+        <p>Add some chunks ...</p>
+
     </div>
 
 </div>
@@ -22,11 +24,11 @@
 
 <div class="sideblock">
 <ul>
-    <li><a href="#replace_for_progressive_enhancement" class="add">Add Text</a></li>
-    <li><a href="#replace_for_progressive_enhancement" class="add">Add Document</a></li>
-    <li><a href="#replace_for_progressive_enhancement" class="add">Add Audio</a></li>
-    <li><a href="#replace_for_progressive_enhancement" class="add">Add Video</a></li>
-    <li><a href="#replace_for_progressive_enhancement" class="add">Add Link</a></li>
+    <li><a href="/add/text/" class="add">Add Text</a></li>
+    <li><a href="/add/document/" class="add">Add Document</a></li>
+    <li><a href="/add/audio/" class="add">Add Audio</a></li>
+    <li><a href="/add/video/" class="add">Add Video</a></li>
+    <li><a href="/add/link/" class="add">Add Link</a></li>
 </ul>
 </div>
 
@@ -38,9 +40,55 @@
 
     $(function () {
 
+         var removes = function () {
+
+            $('a.chunkremove').click(function () {
+
+                $this = $(this);
+                $this.parents('.chunk').fadeOut();
+
+                return false;
+
+            });
+
+        }
+
         $('a.add').click(function () {
 
-            alert('that worked');
+            var $chunkhead = $('<div class="chunkhead" />');
+            var $chunktitle = $('<div class="chunktitle" />');
+
+            $chunktitle.append($('<p>Title</p>'));
+
+            var $chunkmenu = $('<div class="chunkmenu" />');
+
+            $chunkmenu.append($('<ul>'
+                + '<li><a href="#hide">Hide</a></li>'
+                + '<li><a href="#remove" class="chunkremove">Remove</a></li>'
+                + '</ul>'));
+            
+            $chunkhead
+                .append($chunktitle)
+                .append($chunkmenu);
+
+            var $chunkcontent = $('<div class="chunkcontent" />');
+            var $chunk = $('<div class="chunk" />');
+            
+            $chunk
+                .append($chunkhead)
+                .append($chunkcontent)
+                .hide()
+                .appendTo($('#chunks'));
+            
+            if($('#nochunks').length > 0) {
+
+                $('#nochunks').fadeOut('slow', function () { $chunk.fadeIn(); });
+
+            } else { $chunk.fadeIn('slow'); }
+            
+            removes();
+
+            return false;
 
         });
 
