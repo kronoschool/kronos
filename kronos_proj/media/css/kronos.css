@@ -1,0 +1,19 @@
+body { font-family: monaco; margin: 0; text-align: center; font-size: 62.5%; background: #fff; }
+
+#wrap { width: 960px; margin: 1em auto; text-align: left; }
+.wrapper { overflow: auto; margin: 0; }
+
+#sidebar { float: right; width: 180px; margin: 0 0 0 20px; }
+#sidebar .sideblock { border: 1px solid #d3d3d3; padding: 2em; margin: 0; }
+#sidebar h4 { font-size: 1.8em; }
+#sidebar ul { margin: 0; padding-left: 2em; }
+#sidebar ul li { font-size: 1.2em; margin-bottom: 0.4em; }
+
+#header { margin: 1em 0; }
+#header h1 { font-size: 4em; }
+
+#content { float: left; width: 740px; margin: 0 20px 0 0; }
+#content h2 { font-size: 2.4em; }
+
+#chunks { margin: 0; }
+#chunks .chunk { margin: 0 0 2em 0; padding: 2em; border: 1px solid #d3d3d3; }
