@@ -16,12 +16,11 @@ body { font-family: monaco; margin: 0; text-align: center; font-size: 62.5%; bac
 #content h2 { font-size: 2.4em; }
 
 #chunks { margin: 0; }
-#nochunks { margin: 2em 0 0 0; color: #d3d3d3; font-size: 1.4em; }
-#chunks .chunk { margin: 0 0 2em 0; }
-#chunks .chunk .chunkhead { margin: 0 0 0.8em 0; overflow: auto; }
-#chunks .chunk .chunkhead .chunktitle { float: left; }
-#chunks .chunk .chunkhead .chunktitle p { font-size: 1.1em;  margin: 0; }
-#chunks .chunk .chunkhead .chunkmenu { float: right; }
-#chunks .chunk .chunkhead .chunkmenu ul { margin: 0; padding: 0; }
-#chunks .chunk .chunkhead .chunkmenu ul li { margin-left: 0.8em; font-size: 1.1em; display: inline; list-style-type: none; }   
-#chunks .chunk .chunkcontent { margin: 0; padding: 2em; border: 1px solid #d3d3d3; }
+#nochunks { margin: 1em 0 0 0; color: #d3d3d3; font-size: 1.4em; }
+#chunks .chunk { margin: 1em 0; }
+#chunks .chunk .chunkfoot { margin: 0.8em 0 0 0; overflow: auto; }
+#chunks .chunk .chunkfoot .chunkmenu { float: right; }
+#chunks .chunk .chunkfoot .chunkmenu ul { margin: 0; padding: 0; }
+#chunks .chunk .chunkfoot .chunkmenu ul li { margin-left: 0.8em; font-size: 1.1em; display: inline; list-style-type: none; }   
+#chunks .chunk .chunkcontent { margin: 0; }
+#chunks .chunk .chunkcontent p { font-size: 1.4em; color: #d3d3d3; }
