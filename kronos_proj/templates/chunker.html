@@ -18,99 +18,17 @@
 
 <div class="sideblock">
 <ul>
-    <li><a href="/add/text/" class="add">Add Text</a></li>
-    <li><a href="/add/document/" class="add">Add Document</a></li>
-    <li><a href="/add/audio/" class="add">Add Audio</a></li>
-    <li><a href="/add/video/" class="add">Add Video</a></li>
-    <li><a href="/add/link/" class="add">Add Link</a></li>
+    <li><a href="#text" class="add">Add Text</a></li>
+    <li><a href="#doc" class="add">Add Document</a></li>
+    <li><a href="#audio" class="add">Add Audio</a></li>
+    <li><a href="#video" class="add">Add Video</a></li>
+    <li><a href="#link" class="add">Add Link</a></li>
 </ul>
 </div>
 
 {% endblock %}
 
 {% block add_js %}
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-
-    $(function () {
-
-        var nochunks = function () {
-
-            $nochunks = $('<div id="nochunks" />');
-            $nochunks
-                .append('<p>Add some chunks ...</p>')
-                .hide()
-                .appendTo($('#chunks'))
-                .fadeIn('slow');
-
-        }
-
-        var removes = function () {
-
-            $('a.chunkremove').click(function () {
-
-                $parent = $(this).parents('.chunk');
-                $parent
-                    .fadeOut('slow', function () {
-
-                        $(this).remove();
-                        if($('#chunks').children().length < 1) { nochunks(); }
-
-                    });
-
-                return false;
-
-            });
-
-        }
-
-        $('a.add').click(function () {
-
-            var $chunkhead = $('<div class="chunkhead" />');
-            var $chunktitle = $('<div class="chunktitle" />');
-
-            $chunktitle.append($('<p>Title</p>'));
-
-            var $chunkmenu = $('<div class="chunkmenu" />');
-
-            $chunkmenu.append($('<ul>'
-                + '<li><a href="#hide">Hide</a></li>'
-                + '<li><a href="#remove" class="chunkremove">Remove</a></li>'
-                + '</ul>'));
-            
-            $chunkhead
-                .append($chunktitle)
-                .append($chunkmenu);
-
-            var $chunkcontent = $('<div class="chunkcontent" />');
-            var $chunk = $('<div class="chunk" />');
-            
-            $chunk
-                .append($chunkhead)
-                .append($chunkcontent)
-                .hide()
-                .appendTo($('#chunks'));
-            
-            if($('#nochunks').length > 0) {
-
-                $('#nochunks').fadeOut('slow', function () { 
-            
-                    $(this).remove();
-                    $chunk.fadeIn();
-
-                });
-
-            } else { $chunk.fadeIn('slow'); }
-            
-            removes();
-
-            return false;
-
-        });
-
-        nochunks();
-
-    });
-
-</script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/chunker.js"></script>
 {% endblock %}
