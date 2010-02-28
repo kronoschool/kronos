@@ -73,7 +73,7 @@ $(function () {
         var $chunkcontent = $('<div class="chunkcontent" />');
         var $editchunk = $('<p>Sorry, I don\'t support this type of chunk yet.</p>');
         if(type == 'text') {
-            $editchunk = $('<textarea rows="4" cols="102" /></textarea>');
+            $editchunk = $('<textarea rows="4" cols="80" /></textarea>');
         }
         $chunkcontent.append($editchunk);
  

@@ -24,3 +24,4 @@ body { font-family: monaco; margin: 0; text-align: center; font-size: 62.5%; bac
 #chunks .chunk .chunkfoot .chunkmenu ul li { margin-left: 0.8em; font-size: 1.1em; display: inline; list-style-type: none; }   
 #chunks .chunk .chunkcontent { margin: 0; }
 #chunks .chunk .chunkcontent p { font-size: 1.4em; color: #d3d3d3; }
+#chunks .chunk .chunkcontent textarea { width: 738px; }

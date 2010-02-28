@@ -45,7 +45,7 @@ class Lesson(models.Model):
     #topic      = model.ForeignKey(topics.Topic)
 
     #optional fields
-    description  = models.TextField(max_length=500, help_text="What is this lesson about (in 3 sentences).")
+    description  = models.TextField(max_length=500, help_text="What is this lesson about (in 3 sentences).", blank=True)
 
     created_date = models.DateField(auto_now_add=True)
     edited_date  = models.DateField(auto_now=True)
@@ -72,8 +72,6 @@ class Chunk(models.Model):
     res_id      = models.PositiveIntegerField()
     resource    = generic.GenericForeignKey('res_type', 'res_id')
 
-    #created_date = models.DateField(auto_now_add=True)
-    #edited_date  = models.DateField(auto_now=True)
 
     def __unicode__(self):
        return self.lesson.title+" order:"+str(self.order)  #+" --> resource:"+str(resource.id)
