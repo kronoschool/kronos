@@ -31,4 +31,9 @@
 {% block add_js %}
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
     <script type="text/javascript" src="{{ MEDIA_URL }}js/chunker.js"></script>
+    <script  type="text/javascript">
+        var course_id={{ course_id }},
+            lesson_id={{ lesson_id }},
+            number_of_chunks={{ number_of_chunks }};
+    </script>
 {% endblock %}
